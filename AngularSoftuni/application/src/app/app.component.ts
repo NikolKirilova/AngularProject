@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CausesService } from './causes.service';
+import { ICause } from './shared/interfaces/cause';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'application';
+  selectedCause: ICause;
+
+  selectCauseHandler(cause: ICause) {
+    this.selectedCause = cause;
+  }
 }
